@@ -5,7 +5,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 #load data
-bike_share_df = pd.read_csv('merged_data.csv')
+import os
+
+# Assuming 'dashboard' is a subdirectory in the current working directory
+file_path = os.path.join('dashboard', 'merged_data.csv')
+bike_share_df = pd.read_csv(file_path)
 
 def create_rent_df(df):
     rent_df = df.groupby(by='dteday').agg({
